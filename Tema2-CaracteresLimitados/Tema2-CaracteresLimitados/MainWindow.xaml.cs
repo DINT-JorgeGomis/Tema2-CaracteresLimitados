@@ -27,8 +27,8 @@ namespace Tema2_CaracteresLimitados
 
         private void BloquearSiSeHaAlcanzadoElLimite(object sender, TextChangedEventArgs e)
         {
-            CaracteresRestantesTextBox.Content = (int.Parse(CaracteresRestantesTextBox.Content.ToString()) - 1).ToString();
-            //(sender as TextBox).IsEnabled = (sender as TextBox).Text.Length >= (sender as TextBox).MaxLength;
+            CaracteresRestantesTextBox.Content = 140 - (sender as TextBox).Text.Length;
+            (sender as TextBox).IsEnabled = (sender as TextBox).Text.Length < (sender as TextBox).MaxLength;
         }
     }
 }
